@@ -1,0 +1,12 @@
+---
+- name: create VPC
+  amazon.aws.ec2_vpc_net:
+    name: "{{ vpc_name }}"
+    cidr_block: "{{ vpc_cidr }}"
+    region: "{{ region }}"
+    state: present
+  register: vpc_output
+
+- name: Print id
+  debug:
+    var: vpc_output.id

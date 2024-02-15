@@ -1,0 +1,4 @@
+#VPC and Network variables 
+vpc_name: socks
+vpc_cidr: 10.10.0.0/16
+region: eu-central-1
