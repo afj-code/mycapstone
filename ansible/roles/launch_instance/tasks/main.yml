@@ -1,0 +1,21 @@
+---
+- name: Launch instance
+  amazon.aws.ec2_instance:
+    key_name: "{{ socks_key_pair.key.name }}"
+    security_group: "{{ sg_output.group_id }}"
+    instance_type: "{{ instance_type }}"
+    # instance_tags: "{{ my_tags|items2dict }}"
+    image_id: "{{ ami_result.stdout }}"
+    wait: true
+    region: "{{ region }}"
+    vpc_subnet_id: "{{ subnet_output.subnet.id }}"
+    wait_timeout: 150
+    network:
+    assign_public_ip: true
+    tags:
+      name: "{{ tag_name }}"
+    register: instance_output
+
+- name: Print instance public ip address
+  debug:
+    var: instance_output.instances.public_ip_address

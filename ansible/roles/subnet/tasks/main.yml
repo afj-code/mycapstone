@@ -1,0 +1,14 @@
+---
+- name: Subnet creation
+  amazon.aws.ec2_vpc_subnet:
+    state: present
+    vpc_id: "{{ vpc_output.vpc.id }}"
+    cidr: "{{ subnet_cidr }}"
+    region: "{{ region }}"
+    tags:
+      name: sock_subnet
+  register: subnet_output
+
+- name: Print Subnet id
+  debug:
+    var: subnet_output.subnet.id

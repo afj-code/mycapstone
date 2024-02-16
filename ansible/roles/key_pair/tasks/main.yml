@@ -1,0 +1,11 @@
+---
+- name: Create Key Pair
+  amazon.aws.ec2_key:
+    name: sockskey
+    region: "{{ region }}"
+    file_name: ./sockskey.pem
+  register: socks_key_pair
+
+- name: Print key name
+  debug:
+    var: socks_key_pair.key.name

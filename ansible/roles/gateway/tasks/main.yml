@@ -1,11 +1,11 @@
 ---
 - name: Internet gateway
   amazon.aws.ec2_vpc_igw:
-    vpc_id: "{{ vpc_output.id }}"
+    vpc_id: "{{ vpc_output.vpc.id }}"
     region: "{{ region }}"
     state: present
   register: igw_output
 
 - name: Print id
   debug:
-    var: igw_output.id
+    var: igw_output.gateway_id

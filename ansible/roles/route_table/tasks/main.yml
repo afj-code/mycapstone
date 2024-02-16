@@ -1,0 +1,19 @@
+---
+- name: Set up public subnet route table
+  amazon.aws.ec2_vpc_route_table:
+    vpc_id: "{{ vpc_output.vpc.id }}"
+    region: "{{ region }}"
+    tags:
+      Name: socks
+    subnets:
+      - "{{ subnet_output.subnet.id }}"
+    routes:
+      - dest: 0.0.0.0/0
+        gateway_id: "{{ igw_output.gateway_id }}"
+      - dest: ::/0
+        gateway_id: "{{ igw_output.gateway_id }}"
+  register: route_table_output
+
+- name: Print RT id
+  debug:
+    var: route_table_output.route_table.id
