@@ -9,7 +9,7 @@
     wait: true
     region: "{{ region }}"
     vpc_subnet_id: "{{ subnet_output.subnet.id }}"
-    wait_timeout: 150
+    wait_timeout: 300
     network:
     assign_public_ip: true
     tags:
@@ -19,3 +19,15 @@
 - name: Print instance public ip address
   debug:
     var: instance_output.instances.public_ip_address
+
+- name: Add new Instance to Host list
+  add_host:
+    hostname: "{{ instance_output.instances.public_ip_address }}"
+    groupname: webserver
+
+- name: Wait for SSH to Become available
+  wait_for:
+    host: "{{ instance_output.instances.public_ip_address }}"
+    port: 22
+    state: started
+    timeout: 220

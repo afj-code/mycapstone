@@ -7,4 +7,4 @@ subnet_cidr: 10.10.0.0/24
 
 #Variables for instance creation
 instance_type: t2.micro
-tag_name: 
+tag_name: sock_server
