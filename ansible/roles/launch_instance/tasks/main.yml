@@ -1,6 +1,8 @@
 ---
 - name: Launch instance
   amazon.aws.ec2_instance:
+    aws_access_key: "{{ access_key }}"  # From vault as defined
+    aws_secret_key: "{{ secret_key }}"
     key_name: "{{ socks_key_pair.key.name }}"
     security_group: "{{ sg_output.group_id }}"
     instance_type: "{{ instance_type }}"

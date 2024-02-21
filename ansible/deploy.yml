@@ -1,0 +1,5 @@
+---
+# Deploy all in all
+- hosts: all
+  roles: all
+

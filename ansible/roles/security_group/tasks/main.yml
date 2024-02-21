@@ -3,6 +3,8 @@
   amazon.aws.ec2_security_group:
     name: sock_group
     description: Allow necessary traffic
+    aws_access_key: "{{ access_key }}"  # From vault as defined
+    aws_secret_key: "{{ secret_key }}"
     vpc_id: "{{ vpc_output.vpc.id }}"
     rules:
       - proto: tcp

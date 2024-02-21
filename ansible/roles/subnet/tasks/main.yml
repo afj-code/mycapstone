@@ -1,6 +1,8 @@
 ---
 - name: Subnet creation
   amazon.aws.ec2_vpc_subnet:
+    aws_access_key: "{{ access_key }}"  # From vault as defined
+    aws_secret_key: "{{ secret_key }}"
     state: present
     vpc_id: "{{ vpc_output.vpc.id }}"
     cidr: "{{ subnet_cidr }}"
