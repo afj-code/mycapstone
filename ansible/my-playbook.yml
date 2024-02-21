@@ -1,4 +1,11 @@
 ---
 - hosts: all
   roles:
-  - all
+  - ami
+  - gateway
+  - key_pair
+  - launch_instance
+  - route_table
+  - security_group
+  - subnet
+  - vpc
