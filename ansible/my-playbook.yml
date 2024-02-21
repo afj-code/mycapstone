@@ -1,5 +1,5 @@
 ---
 # Deploy all in all
-- hosts: all
+- hosts: localhost
   roles: all
 
