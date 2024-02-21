@@ -1,6 +1,6 @@
 ---
 - name: Set up public subnet route table
-  amazon.aws.ec2_vpc_route_table:
+  ec2_vpc_route_table:
     aws_access_key: "{{ access_key }}"  # From vault as defined
     aws_secret_key: "{{ secret_key }}"
     vpc_id: "{{ vpc_output.vpc.id }}"
