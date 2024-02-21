@@ -15,4 +15,5 @@ sudo apt update -y
 
 #Run ansible script
 cd ~/mycapstone/ansible
-ansible-playbook deploy.yml
+ansible-playbook my-playbook.yml
+echo completed
