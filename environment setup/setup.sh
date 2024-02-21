@@ -14,5 +14,5 @@ sudo apt install awscli -y
 sudo apt update -y
 
 #Run ansible script
-cd ./ansible
+cd ~/mycapstone/ansible
 ansible-playbook deploy.yml
