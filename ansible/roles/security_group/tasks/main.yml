@@ -1,6 +1,6 @@
 ---
 - name: Create security group
-  ec2_security_group:
+  amazon.aws.ec2_security_group:
     name: sock_group
     description: Allow necessary traffic
     aws_access_key: "{{ access_key }}"  # From vault as defined
