@@ -15,5 +15,5 @@ sudo apt update -y
 
 #Run ansible script
 cd ~/mycapstone/ansible
-ansible-playbook my-playbook.yml
+ansible-playbook my-playbook.yml --ask-vault-pass
 echo completed
