@@ -12,6 +12,7 @@ sudo apt install python-pip -y
 sudo apt install ansible -y
 sudo apt install awscli -y
 sudo apt update -y
+sudo apt-get install sshpass -y
 
 #Run ansible script
 cd ~/mycapstone/ansible
