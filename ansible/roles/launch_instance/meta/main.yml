@@ -1,3 +1,9 @@
 ---
 dependencies:
   - role: key_pair
+  - role: ami
+  - role: gateway
+  - role: route_table
+  - role: security_group
+  - role: subnet
+  - role: vpc

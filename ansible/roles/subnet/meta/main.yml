@@ -1,3 +1,4 @@
 ---
 dependencies:
   - role: gateway
+  - role: key_pair

@@ -1,3 +1,4 @@
 ---
 dependencies:
   - role: route_table
+  - role: key_pair
