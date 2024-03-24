@@ -3,7 +3,7 @@
   ec2_key:
     name: sockskey
     region: "{{ region }}"
-    file_name: ./sockskey.pem
+    file_name: /home/ubuntu/mycapstone/ansible/sockskey.pem
     aws_access_key: "{{ access_key }}"  # From vault as defined
     aws_secret_key: "{{ secret_key }}"
   register: socks_key_pair
